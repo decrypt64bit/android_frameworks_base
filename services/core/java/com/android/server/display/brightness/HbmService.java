@@ -139,7 +139,7 @@ public class HbmService extends SystemService implements SensorEventListener {
                 String key = uri.getLastPathSegment();
                 if (KEY_AUTO_HBM_ENABLED.equals(key) || KEY_AUTO_HBM_LUX_ON.equals(key) ||
                     KEY_AUTO_HBM_LUX_OFF.equals(key)) {
-                    mHandler.obtainMessage(MSG_SETTINGS_CHANGED).sendToTarget();
+                    mHandler.obtainMessage(MSG_SETTINGS_CHANGED, key).sendToTarget();
                 } else if (Settings.System.SCREEN_BRIGHTNESS.equals(key)) {
                     mHandler.obtainMessage(MSG_BRIGHTNESS_CHANGED).sendToTarget();
                 }
